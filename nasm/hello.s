@@ -7,7 +7,7 @@ _start:
     mov rax, 0x1
     mov rdi, 0x1
     mov rsi, text
-    mov rdx, 14 ; length of "Hello World!\n"
+    mov rdx, len ; length of "Hello World!\n"
     syscall
 
     mov rax, 60
@@ -16,3 +16,4 @@ _start:
 
 section .data
     text db "Hello World!", 0xA ; db: define bytes
+    len equ $ - text
